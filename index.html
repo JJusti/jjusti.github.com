@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>无尽任务</title>
+  <meta name="author" content="JJusti">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="无尽任务"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="无尽任务" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">无尽任务</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="cdh4_rhel63">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-12-17T15:26:59.000Z"><a href="/2013/12/17/manager方式安装cdh4/">Dec 17 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/12/17/manager方式安装cdh4/">Manager方式安装CDH4</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1>安装RHEL6.3</h1>
+<h1>hostname为FQDN形式    cdh0.localdomain</h1>
+<pre><code><span class="string">"""
+    hyper-v由于默认无法识别网卡驱动，需要等安装CI后手动设置，参见下一步说明
+"""</span>
+                                                                                            <span class="comment">#1</span></code></pre>
+<h1>安装Hyper-V CI</h1>
+<h1>设置eth0</h1>
+<pre><code>检查···/etc/sysconfig/network-scripts/ifcfg-eth0···，如不存在则创建
+静态配置
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>0<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+DHCP
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>1<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+检查hostname
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>2<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+NETWORKING=yes
+HOSTNAME=localhost.localdomain
+
+激活eth0
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>3<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+设置开机激活eth0
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>4<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+重启网络服务进行测试
+<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>5<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
+重启系统，使hostname生效(?)</code></pre>
+<h1>设置hosts</h1>
+<pre><code><span class="title">echo</span> <span class="string">"<span class="variable">$IP</span> <span class="variable">$hostname</span>"</span> &gt;&gt; /etc/hosts
+                                                                                            <span class="comment">#2</span></code></pre>
+<h1>关闭selinux</h1>
+<pre><code><span class="title">vim</span> /etc/selinux/conf
+设置为disabled</code></pre>
+<h1>关闭iptables</h1>
+<pre><code><span class="title">chkconfig</span> iptables <span class="built_in">off</span>
+service chkconfig stop</code></pre>
+<h1>设置RHEL6.3DVD镜像源</h1>
+<pre><code><span class="title">vim</span> /etc/yum.repos.d/rhel-<span class="number">63</span>-dvd.repo
+
+[<span class="type">RHEL</span>]
+<span class="title">name</span>=rhel6<span class="number">.3</span>
+<span class="title">baseurl</span>=http://<span class="number">192.168</span><span class="number">.16</span><span class="number">.100</span>/<span class="type">RHEL</span>/<span class="type">RHEL63</span>/
+<span class="title">gpgcheck</span>=<span class="number">1</span>
+<span class="title">gpgkey</span>=http://<span class="number">192.168</span><span class="number">.16</span><span class="number">.100</span>/<span class="type">RHEL</span>/<span class="type">RHEL63</span>/<span class="type">RPM</span>-<span class="type">GPG</span>-<span class="type">KEY</span>-redhat-release.gpg
+<span class="title">enabled</span>=<span class="number">1</span>
+                                                                                            #<span class="number">3</span></code></pre>
+<p><strong># 安装postgresql</strong></p>
+<h1>安装缺失包</h1>
+<pre><code><span class="title">yum</span> install fuse-libs
+
+<span class="title">easy_install</span> argparse</code></pre>
+<h1>参考</h1>
+<p>Installation Path A - Automated Installation by Cloudera Manager</p>
+<ul>
+<li><p><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5" target="_blank">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5</a></p>
+</li>
+<li><p><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1" target="_blank">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-12-12T08:18:08.000Z"><a href="/2013/12/12/hello-world/">Dec 12 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/12/12/hello-world/">Hello World</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2014 JJusti
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
