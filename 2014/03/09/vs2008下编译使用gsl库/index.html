@@ -3,13 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014 | 无尽任务</title>
+  <title>VS2008下编译使用GSL库 | 无尽任务</title>
   <meta name="author" content="JJusti">
+  
+  <meta name="description" content="下载gsl源码
+
+Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包
+http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/
+
+编译
+
+使用VS打开gsl-1.8/VC8/libgsl.sln，分别选择">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="VS2008下编译使用GSL库"/>
   <meta property="og:site_name" content="无尽任务"/>
 
   
@@ -41,12 +50,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2014</h2>
-
-
-  
-    <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -56,7 +60,7 @@
       
       
   
-    <h1 class="title"><a href="/2014/03/09/vs2008下编译使用gsl库/">VS2008下编译使用GSL库</a></h1>
+    <h1 class="title">VS2008下编译使用GSL库</h1>
   
 
     </header>
@@ -129,6 +133,24 @@ libgsl<span class="variable">.dll</span>
       
         
         
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -136,106 +158,25 @@ libgsl<span class="variable">.dll</span>
 </article>
 
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-20T05:47:01.000Z"><a href="/2014/02/20/fork/">Feb 20 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/20/fork/">fork</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
+<section id="comment">
+  <h1 class="title">Comments</h1>
 
   
-    <article class="using_git">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-17T07:59:59.000Z"><a href="/2014/02/17/使用Git进行代码管理/">Feb 17 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/17/使用Git进行代码管理/">使用Git进行代码管理</a></h1>
-  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    </header>
-    <div class="entry">
+<div class="fb-comments" data-href="http://yoursite.com/2014/03/09/vs2008下编译使用gsl库/" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
-        <h2>简介</h2>
-<p>git 分布式版本控制系统<br>GitLab GitHub克隆<br>Gitflow 一套开发流程+git扩展包<br>SourceTreeGitExtensions git的GUI客户端</p>
-<h2>git的优缺点</h2>
-<p> 本地版本库离线提交<br> 分支和合并<br> 分布式<br> 速度</p>
-<p> 细粒度权限管理<br>    某个项目下某个目录开放给指定用户权限<br>         合理划分功能模块解决<br> 使用习惯</p>
-<h2>gitflow</h2>
-<p>基于git的分支合并功能，常用开发动作分配到不同分支进行。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>  <span class="title">feature</span>	重量级开发分支
-  develop	普通开发分支
-  release	
-  hotfix	紧急修复
-  master	随时可用版本
-</pre></td></tr></table></figure>
-
-<p><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" target="_blank">http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png</a></p>
-<p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<h2>gitlab</h2>
-<p>web版git服务管理，方便的创建、管理项目，以及简单的项目管理。</p>
-<h2>SourceTreeGitExtensions</h2>
-<p>  各有特点，搭配使用。</p>
-<ul>
-<li><p>SourceTree<br> gitflow集成<br> 界面使用方便</p>
-</li>
-<li><p>GitExtensions<br>  VS插件集成</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
   
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
+</section>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

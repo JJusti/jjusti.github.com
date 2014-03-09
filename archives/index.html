@@ -46,6 +46,128 @@
 
 
   
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-03-09T14:45:21.000Z"><a href="/2014/03/09/vs2008下编译使用gsl库/">Mar 9 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/09/vs2008下编译使用gsl库/">VS2008下编译使用GSL库</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>下载gsl源码</li>
+</ul>
+<p>Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包</p>
+<p><a href="http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/" target="_blank">http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/</a></p>
+<ul>
+<li>编译</li>
+</ul>
+<p>使用VS打开<code>gsl-1.8/VC8/libgsl.sln</code>，分别选择<code>Debug-DLL</code>和<code>Release-DLL</code>选项<br>进行编译。默认不支持x64，需要手动创建x64下编译配置。</p>
+<ul>
+<li>使用</li>
+</ul>
+<p>完成编译后，需要使用gsl-1.8需要以下目录下文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre>gsl-<span class="number">1.8</span>
+    ├─gsl 头文件
+    └─VC8
+        ├─libgsl
+        │  ├─Debug-DLL
+        │  ├─<span class="keyword">Release</span>-DLL
+        │  └─x64
+        │      ├─Debug-DLL
+        │      └─<span class="keyword">Release</span>-DLL
+        └─libgslcblas
+            ├─Debug-DLL
+            ├─<span class="keyword">Release</span>-DLL
+            └─x64
+                ├─Debug-DLL
+                └─<span class="keyword">Release</span>-DLL
+</pre></td></tr></table></figure>
+
+<p>正确设置项目包含目录和库目录后即可使用。<br>程序运行时需要对应dll到执行目录或系统目录</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="comment">//Debug</span>
+libgslcblas_d<span class="variable">.dll</span>
+libgsl_d<span class="variable">.dll</span>
+<span class="comment">//Release</span>
+libgslcblas<span class="variable">.dll</span>
+libgsl<span class="variable">.dll</span>
+</pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-02-20T05:47:01.000Z"><a href="/2014/02/20/fork/">Feb 20 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/02/20/fork/">fork</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
     <article class="using_git">
   
   <div class="post-content">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/2 | 无尽任务</title>
+  <title>Archives: 2014/3 | 无尽任务</title>
   <meta name="author" content="JJusti">
   
   
@@ -42,7 +42,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2014/2</h2>
+<h2 class="archive-title">2014/3</h2>
 
 
   
@@ -52,78 +52,76 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-02-20T05:47:01.000Z"><a href="/2014/02/20/fork/">Feb 20 2014</a></time>
+        <time datetime="2014-03-09T14:45:21.000Z"><a href="/2014/03/09/vs2008下编译使用gsl库/">Mar 9 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2014/02/20/fork/">fork</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="using_git">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-17T07:59:59.000Z"><a href="/2014/02/17/使用Git进行代码管理/">Feb 17 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/17/使用Git进行代码管理/">使用Git进行代码管理</a></h1>
+    <h1 class="title"><a href="/2014/03/09/vs2008下编译使用gsl库/">VS2008下编译使用GSL库</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2>简介</h2>
-<p>git 分布式版本控制系统<br>GitLab GitHub克隆<br>Gitflow 一套开发流程+git扩展包<br>SourceTreeGitExtensions git的GUI客户端</p>
-<h2>git的优缺点</h2>
-<p> 本地版本库离线提交<br> 分支和合并<br> 分布式<br> 速度</p>
-<p> 细粒度权限管理<br>    某个项目下某个目录开放给指定用户权限<br>         合理划分功能模块解决<br> 使用习惯</p>
-<h2>gitflow</h2>
-<p>基于git的分支合并功能，常用开发动作分配到不同分支进行。</p>
+        <ul>
+<li>下载gsl源码</li>
+</ul>
+<p>Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包</p>
+<p><a href="http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/" target="_blank">http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/</a></p>
+<ul>
+<li>编译</li>
+</ul>
+<p>使用VS打开<code>gsl-1.8/VC8/libgsl.sln</code>，分别选择<code>Debug-DLL</code>和<code>Release-DLL</code>选项<br>进行编译。默认不支持x64，需要手动创建x64下编译配置。</p>
+<ul>
+<li>使用</li>
+</ul>
+<p>完成编译后，需要使用gsl-1.8需要以下目录下文件。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
 5
-</pre></td><td class="code"><pre>  <span class="title">feature</span>	重量级开发分支
-  develop	普通开发分支
-  release	
-  hotfix	紧急修复
-  master	随时可用版本
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre>gsl-<span class="number">1.8</span>
+    ├─gsl 头文件
+    └─VC8
+        ├─libgsl
+        │  ├─Debug-DLL
+        │  ├─<span class="keyword">Release</span>-DLL
+        │  └─x64
+        │      ├─Debug-DLL
+        │      └─<span class="keyword">Release</span>-DLL
+        └─libgslcblas
+            ├─Debug-DLL
+            ├─<span class="keyword">Release</span>-DLL
+            └─x64
+                ├─Debug-DLL
+                └─<span class="keyword">Release</span>-DLL
 </pre></td></tr></table></figure>
 
-<p><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" target="_blank">http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png</a></p>
-<p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<h2>gitlab</h2>
-<p>web版git服务管理，方便的创建、管理项目，以及简单的项目管理。</p>
-<h2>SourceTreeGitExtensions</h2>
-<p>  各有特点，搭配使用。</p>
-<ul>
-<li><p>SourceTree<br> gitflow集成<br> 界面使用方便</p>
-</li>
-<li><p>GitExtensions<br>  VS插件集成</p>
-</li>
-</ul>
+<p>正确设置项目包含目录和库目录后即可使用。<br>程序运行时需要对应dll到执行目录或系统目录</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="comment">//Debug</span>
+libgslcblas_d<span class="variable">.dll</span>
+libgsl_d<span class="variable">.dll</span>
+<span class="comment">//Release</span>
+libgslcblas<span class="variable">.dll</span>
+libgsl<span class="variable">.dll</span>
+</pre></td></tr></table></figure>
+
 
       
     </div>
