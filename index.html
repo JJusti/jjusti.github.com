@@ -48,6 +48,64 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-08-02T14:55:37.000Z"><a href="/2014/08/02/win32-libcurl-static/">Aug 2 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/08/02/win32-libcurl-static/">Win32下静态连接使用libcurl</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2>编译libcurl</h2>
+<p>详细编译信息参考<code>curl-src\winbuild\BUILD.WINDOWS.txt</code></p>
+<ul>
+<li><p>打开<code>Visual Studio command prompt Shell</code></p>
+<p>  <code>cd curl-src\winbuild</code></p>
+</li>
+<li><p>编译debug版本</p>
+<p>  <code>nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86 DEBUG=YES</code></p>
+<p>  编译生成到<code>cd curl-src\builds\libcurl-vc11-x86-debug-static-ipv6-sspi-spnego-winssl</code>目录下</p>
+</li>
+<li><p>编译release版本</p>
+<p>  <code>nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86</code></p>
+<p>  编译生成到<code>cd curl-src\builds\libcurl-vc11-x86-release-static-ipv6-sspi-spnego-winssl</code>目录下</p>
+</li>
+</ul>
+<h2>使用</h2>
+<ul>
+<li>项目预处理设置中设置<code>CURL_STATIC</code>宏，或包含curl头文件之前定义<code>CURL_STATICLIB</code>宏</li>
+<li>包含上一步编译生成目录下头文件</li>
+<li>链接上一步编译生成目录下lib文件 <figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="constant">Debug</span><span class="symbol">:`libcurl_a_debug</span>.lib`
+<span class="constant">Release</span><span class="symbol">:`libcurl_a</span>.lib`
+</pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-03-09T14:45:21.000Z"><a href="/2014/03/09/vs2008下编译使用gsl库/">Mar 9 2014</a></time>
       
       
