@@ -3,36 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Win32下静态连接使用libcurl | 无尽任务</title>
+  <title>使用Git进行代码管理 | 无尽任务</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编译libcurl详细编译信息参考curl-src\winbuild\BUILD.WINDOWS.txt
-
-打开Visual Studio command prompt Shell
-  cd curl-src\winbuild
-
-编译debug版本
-  nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86 DEBUG=YES">
+  <meta name="description" content="简介git 分布式版本控制系统GitLab GitHub克隆Gitflow 一套开发流程+git扩展包SourceTreeGitExtensions git的GUI客户端
+git的优缺点 本地版本库离线提交 分支和合并 分布式 速度
+ 细粒度权限管理    某个项目下某个目录开放给指定用户权限         合理划分功能模块解决 使用习惯
+gitflow基于git的分支合并功能，常用开发动作分配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win32下静态连接使用libcurl">
-<meta property="og:url" content="http://www.spark-note.com/2014/08/02/win32-libcurl-static/index.html">
+<meta property="og:title" content="使用Git进行代码管理">
+<meta property="og:url" content="http://www.spark-note.com/2014/02/17/git-intro/index.html">
 <meta property="og:site_name" content="无尽任务">
-<meta property="og:description" content="编译libcurl详细编译信息参考curl-src\winbuild\BUILD.WINDOWS.txt
-
-打开Visual Studio command prompt Shell
-  cd curl-src\winbuild
-
-编译debug版本
-  nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86 DEBUG=YES">
-<meta property="og:updated_time" content="2016-06-16T07:51:06.370Z">
+<meta property="og:description" content="简介git 分布式版本控制系统GitLab GitHub克隆Gitflow 一套开发流程+git扩展包SourceTreeGitExtensions git的GUI客户端
+git的优缺点 本地版本库离线提交 分支和合并 分布式 速度
+ 细粒度权限管理    某个项目下某个目录开放给指定用户权限         合理划分功能模块解决 使用习惯
+gitflow基于git的分支合并功能，常用开发动作分配">
+<meta property="og:updated_time" content="2016-06-16T07:48:53.816Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win32下静态连接使用libcurl">
-<meta name="twitter:description" content="编译libcurl详细编译信息参考curl-src\winbuild\BUILD.WINDOWS.txt
-
-打开Visual Studio command prompt Shell
-  cd curl-src\winbuild
-
-编译debug版本
-  nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86 DEBUG=YES">
+<meta name="twitter:title" content="使用Git进行代码管理">
+<meta name="twitter:description" content="简介git 分布式版本控制系统GitLab GitHub克隆Gitflow 一套开发流程+git扩展包SourceTreeGitExtensions git的GUI客户端
+git的优缺点 本地版本库离线提交 分支和合并 分布式 速度
+ 细粒度权限管理    某个项目下某个目录开放给指定用户权限         合理划分功能模块解决 使用习惯
+gitflow基于git的分支合并功能，常用开发动作分配">
   
     <link rel="alternate" href="/atom.xml" title="无尽任务" type="application/atom+xml">
   
@@ -81,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-win32-libcurl-static" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-intro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/08/02/win32-libcurl-static/" class="article-date">
-  <time datetime="2014-08-02T14:55:37.000Z" itemprop="datePublished">2014-08-02</time>
+    <a href="/2014/02/17/git-intro/" class="article-date">
+  <time datetime="2014-02-17T07:59:59.000Z" itemprop="datePublished">2014-02-17</time>
 </a>
     
   </div>
@@ -95,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Win32下静态连接使用libcurl
+      使用Git进行代码管理
     </h1>
   
 
@@ -103,32 +94,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="编译libcurl"><a href="#编译libcurl" class="headerlink" title="编译libcurl"></a>编译libcurl</h2><p>详细编译信息参考<code>curl-src\winbuild\BUILD.WINDOWS.txt</code></p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>git 分布式版本控制系统<br>GitLab GitHub克隆<br>Gitflow 一套开发流程+git扩展包<br>SourceTreeGitExtensions git的GUI客户端</p>
+<h2 id="git的优缺点"><a href="#git的优缺点" class="headerlink" title="git的优缺点"></a>git的优缺点</h2><p> 本地版本库离线提交<br> 分支和合并<br> 分布式<br> 速度</p>
+<p> 细粒度权限管理<br>    某个项目下某个目录开放给指定用户权限<br>         合理划分功能模块解决<br> 使用习惯</p>
+<h2 id="gitflow"><a href="#gitflow" class="headerlink" title="gitflow"></a>gitflow</h2><p>基于git的分支合并功能，常用开发动作分配到不同分支进行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">feature	重量级开发分支</span><br><span class="line">develop	普通开发分支</span><br><span class="line">release	</span><br><span class="line">hotfix	紧急修复</span><br><span class="line">master	随时可用版本</span><br></pre></td></tr></table></figure>
+<p><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" target="_blank" rel="external">http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png</a></p>
+<p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+<h2 id="gitlab"><a href="#gitlab" class="headerlink" title="gitlab"></a>gitlab</h2><p>web版git服务管理，方便的创建、管理项目，以及简单的项目管理。</p>
+<h2 id="SourceTreeGitExtensions"><a href="#SourceTreeGitExtensions" class="headerlink" title="SourceTreeGitExtensions"></a>SourceTreeGitExtensions</h2><p>  各有特点，搭配使用。</p>
 <ul>
-<li><p>打开<code>Visual Studio command prompt Shell</code></p>
-<p>  <code>cd curl-src\winbuild</code></p>
+<li><p>SourceTree<br> gitflow集成<br> 界面使用方便</p>
 </li>
-<li><p>编译debug版本</p>
-<p>  <code>nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86 DEBUG=YES</code></p>
-<p>  编译生成到<code>cd curl-src\builds\libcurl-vc11-x86-debug-static-ipv6-sspi-spnego-winssl</code>目录下</p>
-</li>
-<li><p>编译release版本</p>
-<p>  <code>nmake /f Makefile.vc mode=static VC=11 GEN_PEB=yes MACHINE=x86</code></p>
-<p>  编译生成到<code>cd curl-src\builds\libcurl-vc11-x86-release-static-ipv6-sspi-spnego-winssl</code>目录下</p>
-</li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
-<li>项目预处理设置中设置<code>CURL_STATIC</code>宏，或包含curl头文件之前定义<code>CURL_STATICLIB</code>宏</li>
-<li>包含上一步编译生成目录下头文件</li>
-<li><p>链接上一步编译生成目录下lib文件</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debug:`libcurl_a_debug.lib`</span><br><span class="line">Release:`libcurl_a.lib`</span><br></pre></td></tr></table></figure>
+<li><p>GitExtensions<br>  VS插件集成</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.spark-note.com/2014/08/02/win32-libcurl-static/" data-id="cipi0c8xv0005gkaqbuopu5mr" class="article-share-link">Share</a>
+      <a data-url="http://www.spark-note.com/2014/02/17/git-intro/" data-id="cipi0c8xf0000gkaq25f2cg6y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,10 +122,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2014/03/09/vs2008-gsl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VS2008下编译使用GSL库
+        
+      </div>
+    </a>
   
-    <a href="/2014/06/05/replace-mt/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2013/12/17/install-CDH4-Hype-V/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">批量替换VS项目文件设置</div>
+      <div class="article-nav-title">Cloudera Manager方式在Hype-V中安装CDH4</div>
     </a>
   
 </nav>

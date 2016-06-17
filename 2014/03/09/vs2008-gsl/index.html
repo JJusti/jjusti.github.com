@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>VS2008下编译使用GSL库 | 无尽任务</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下载gsl源码
+
+Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包
+http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/
+
+编译
+
+使用VS打开gsl-1.8/VC8/libgsl.sln，分别选择Debug-DLL和Release-DLL选项进行编译。默认不支持x64，需要手动创建x64下编译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VS2008下编译使用GSL库">
+<meta property="og:url" content="http://www.spark-note.com/2014/03/09/vs2008-gsl/index.html">
+<meta property="og:site_name" content="无尽任务">
+<meta property="og:description" content="下载gsl源码
+
+Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包
+http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/
+
+编译
+
+使用VS打开gsl-1.8/VC8/libgsl.sln，分别选择Debug-DLL和Release-DLL选项进行编译。默认不支持x64，需要手动创建x64下编译">
+<meta property="og:updated_time" content="2016-06-16T07:50:04.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VS2008下编译使用GSL库">
+<meta name="twitter:description" content="下载gsl源码
+
+Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包
+http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/
+
+编译
+
+使用VS打开gsl-1.8/VC8/libgsl.sln，分别选择Debug-DLL和Release-DLL选项进行编译。默认不支持x64，需要手动创建x64下编译">
+  
+    <link rel="alternate" href="/atom.xml" title="无尽任务" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">无尽任务</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.spark-note.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vs2008-gsl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/09/vs2008-gsl/" class="article-date">
+  <time datetime="2014-03-09T14:45:21.000Z" itemprop="datePublished">2014-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      VS2008下编译使用GSL库
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>下载gsl源码</li>
+</ul>
+<p>Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包</p>
+<p><a href="http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/" target="_blank" rel="external">http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/</a></p>
+<ul>
+<li>编译</li>
+</ul>
+<p>使用VS打开<code>gsl-1.8/VC8/libgsl.sln</code>，分别选择<code>Debug-DLL</code>和<code>Release-DLL</code>选项<br>进行编译。默认不支持x64，需要手动创建x64下编译配置。</p>
+<ul>
+<li>使用</li>
+</ul>
+<p>完成编译后，需要使用gsl-1.8需要以下目录下文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">gsl-1.8</span><br><span class="line">    ├─gsl 头文件</span><br><span class="line">    └─VC8</span><br><span class="line">        ├─libgsl</span><br><span class="line">        │  ├─Debug-DLL</span><br><span class="line">        │  ├─Release-DLL</span><br><span class="line">        │  └─x64</span><br><span class="line">        │      ├─Debug-DLL</span><br><span class="line">        │      └─Release-DLL</span><br><span class="line">        └─libgslcblas</span><br><span class="line">            ├─Debug-DLL</span><br><span class="line">            ├─Release-DLL</span><br><span class="line">            └─x64</span><br><span class="line">                ├─Debug-DLL</span><br><span class="line">                └─Release-DLL</span><br></pre></td></tr></table></figure>
+<p>正确设置项目包含目录和库目录后即可使用。<br>程序运行时需要对应dll到执行目录或系统目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//Debug</span><br><span class="line">libgslcblas_d.dll</span><br><span class="line">libgsl_d.dll</span><br><span class="line">//Release</span><br><span class="line">libgslcblas.dll</span><br><span class="line">libgsl.dll</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2014/03/09/vs2008-gsl/" data-id="cipi0c8xs0004gkaqqqw3zvgc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/06/05/replace-mt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          批量替换VS项目文件设置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/17/git-intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用Git进行代码管理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/08/02/win32-libcurl-static/">Win32下静态连接使用libcurl</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06/05/replace-mt/">批量替换VS项目文件设置</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/09/vs2008-gsl/">VS2008下编译使用GSL库</a>
+          </li>
+        
+          <li>
+            <a href="/2014/02/17/git-intro/">使用Git进行代码管理</a>
+          </li>
+        
+          <li>
+            <a href="/2013/12/17/install-CDH4-Hype-V/">Cloudera Manager方式在Hype-V中安装CDH4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 JJusti<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

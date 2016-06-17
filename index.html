@@ -1,65 +1,92 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>无尽任务</title>
-  <meta name="author" content="JJusti">
-  
-  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="无尽任务">
+<meta property="og:url" content="http://www.spark-note.com/index.html">
+<meta property="og:site_name" content="无尽任务">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无尽任务">
+<meta name="twitter:description">
+  
+    <link rel="alternate" href="/atom.xml" title="无尽任务" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-  
-  <meta property="og:site_name" content="无尽任务"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="无尽任务" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  
 </head>
 
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">无尽任务</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">无尽任务</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.spark-note.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-08-02T14:55:37.000Z"><a href="/2014/08/02/win32-libcurl-static/">Aug 2 2014</a></time>
-      
-      
+    <article id="post-win32-libcurl-static" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/02/win32-libcurl-static/" class="article-date">
+  <time datetime="2014-08-02T14:55:37.000Z" itemprop="datePublished">2014-08-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2014/08/02/win32-libcurl-static/">Win32下静态连接使用libcurl</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/02/win32-libcurl-static/">Win32下静态连接使用libcurl</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-        <h2>编译libcurl</h2>
-<p>详细编译信息参考<code>curl-src\winbuild\BUILD.WINDOWS.txt</code></p>
+        <h2 id="编译libcurl"><a href="#编译libcurl" class="headerlink" title="编译libcurl"></a>编译libcurl</h2><p>详细编译信息参考<code>curl-src\winbuild\BUILD.WINDOWS.txt</code></p>
 <ul>
 <li><p>打开<code>Visual Studio command prompt Shell</code></p>
 <p>  <code>cd curl-src\winbuild</code></p>
@@ -73,54 +100,92 @@
 <p>  编译生成到<code>cd curl-src\builds\libcurl-vc11-x86-release-static-ipv6-sspi-spnego-winssl</code>目录下</p>
 </li>
 </ul>
-<h2>使用</h2>
-<ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>项目预处理设置中设置<code>CURL_STATIC</code>宏，或包含curl头文件之前定义<code>CURL_STATICLIB</code>宏</li>
 <li>包含上一步编译生成目录下头文件</li>
-<li>链接上一步编译生成目录下lib文件 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="constant">Debug</span><span class="symbol">:`libcurl_a_debug</span>.lib`
-<span class="constant">Release</span><span class="symbol">:`libcurl_a</span>.lib`
-</pre></td></tr></table></figure>
-
+<li><p>链接上一步编译生成目录下lib文件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Debug:`libcurl_a_debug.lib`</span><br><span class="line">Release:`libcurl_a.lib`</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2014/08/02/win32-libcurl-static/" data-id="cipi0c8xv0005gkaqbuopu5mr" class="article-share-link">Share</a>
       
-        
-        
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
+  
+    <article id="post-replace-mt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/05/replace-mt/" class="article-date">
+  <time datetime="2014-06-05T07:35:49.000Z" itemprop="datePublished">2014-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/05/replace-mt/">批量替换VS项目文件设置</a>
+    </h1>
+  
 
-  <article class="post">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个 Windows 项目包含接近 30 个 VS 项目文件，需要从静态链接运行库修改为动态链接运行库。如果手动修改，每个项目需要修改 Release 和 Debug 下编译选项，需要修改 60 种配置。最终写了一个脚本遍历源码目录下项目文件，自动替换编译选项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replace_md</span><span class="params">(proj)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> proj</span><br><span class="line">    projtmp = proj + <span class="string">'.tmp'</span></span><br><span class="line">    </span><br><span class="line">    os.rename(proj, projtmp)</span><br><span class="line"></span><br><span class="line">    srcfile = open(projtmp, <span class="string">'r'</span>)</span><br><span class="line">    newfile = open(proj, <span class="string">'w'</span>)</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> srcfile:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'RuntimeLibrary='</span> <span class="keyword">in</span> line:</span><br><span class="line">            line = <span class="string">'RuntimeLibrary="2"'</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'release_static'</span> <span class="keyword">in</span> line:</span><br><span class="line">            line = line.replace(<span class="string">'release_static'</span>, <span class="string">'release'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'debug_static'</span> <span class="keyword">in</span> line:</span><br><span class="line">            line = line.replace(<span class="string">'debug_static'</span>, <span class="string">'debug'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'_MT.lib'</span> <span class="keyword">in</span> line:</span><br><span class="line">            line = line.replace(<span class="string">'_MT.lib'</span>, <span class="string">'_MD.lib'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'_MTd.lib'</span> <span class="keyword">in</span> line:</span><br><span class="line">            line = line.replace(<span class="string">'_MTd.lib'</span>, <span class="string">'_MDd.lib'</span>)</span><br><span class="line">        newfile.write(line)</span><br><span class="line">    srcfile.close()</span><br><span class="line">    newfile.close()</span><br><span class="line">    </span><br><span class="line">    os.remove(projtmp)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">walk_srcdir</span><span class="params">(dir)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> dirpath,dirnames,filenames <span class="keyword">in</span> os.walk(<span class="string">'.'</span>):</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> filenames:</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'.vcproj'</span> <span class="keyword">in</span> file <span class="keyword">and</span> <span class="string">'pc.user'</span> <span class="keyword">not</span> <span class="keyword">in</span> file:</span><br><span class="line">                </span><br><span class="line">                replace_md(dir + os.path.join(dirpath[<span class="number">1</span>:], file))</span><br><span class="line"></span><br><span class="line">walk_srcdir(os.getcwd())</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2014/06/05/replace-mt/" data-id="cipi0c8xn0002gkaqkjo6l2ge" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-03-09T14:45:21.000Z"><a href="/2014/03/09/vs2008下编译使用gsl库/">Mar 9 2014</a></time>
-      
-      
+</article>
+
+
   
-    <h1 class="title"><a href="/2014/03/09/vs2008下编译使用gsl库/">VS2008下编译使用GSL库</a></h1>
+    <article id="post-vs2008-gsl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/09/vs2008-gsl/" class="article-date">
+  <time datetime="2014-03-09T14:45:21.000Z" itemprop="datePublished">2014-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/09/vs2008-gsl/">VS2008下编译使用GSL库</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <ul>
 <li>下载gsl源码</li>
 </ul>
 <p>Windows下使用gsl可以使用GnuWin32版本gsl，从以下地址下载gsl源码安装包</p>
-<p><a href="http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/" target="_blank">http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/</a></p>
+<p><a href="http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/" target="_blank" rel="external">http://sourceforge.net/projects/gnuwin32/files/gsl/1.8/</a></p>
 <ul>
 <li>编译</li>
 </ul>
@@ -129,140 +194,54 @@
 <li>使用</li>
 </ul>
 <p>完成编译后，需要使用gsl-1.8需要以下目录下文件。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre>gsl-<span class="number">1.8</span>
-    ├─gsl 头文件
-    └─VC8
-        ├─libgsl
-        │  ├─Debug-DLL
-        │  ├─<span class="keyword">Release</span>-DLL
-        │  └─x64
-        │      ├─Debug-DLL
-        │      └─<span class="keyword">Release</span>-DLL
-        └─libgslcblas
-            ├─Debug-DLL
-            ├─<span class="keyword">Release</span>-DLL
-            └─x64
-                ├─Debug-DLL
-                └─<span class="keyword">Release</span>-DLL
-</pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">gsl-1.8</span><br><span class="line">    ├─gsl 头文件</span><br><span class="line">    └─VC8</span><br><span class="line">        ├─libgsl</span><br><span class="line">        │  ├─Debug-DLL</span><br><span class="line">        │  ├─Release-DLL</span><br><span class="line">        │  └─x64</span><br><span class="line">        │      ├─Debug-DLL</span><br><span class="line">        │      └─Release-DLL</span><br><span class="line">        └─libgslcblas</span><br><span class="line">            ├─Debug-DLL</span><br><span class="line">            ├─Release-DLL</span><br><span class="line">            └─x64</span><br><span class="line">                ├─Debug-DLL</span><br><span class="line">                └─Release-DLL</span><br></pre></td></tr></table></figure>
 <p>正确设置项目包含目录和库目录后即可使用。<br>程序运行时需要对应dll到执行目录或系统目录</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="comment">//Debug</span>
-libgslcblas_d<span class="variable">.dll</span>
-libgsl_d<span class="variable">.dll</span>
-<span class="comment">//Release</span>
-libgslcblas<span class="variable">.dll</span>
-libgsl<span class="variable">.dll</span>
-</pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//Debug</span><br><span class="line">libgslcblas_d.dll</span><br><span class="line">libgsl_d.dll</span><br><span class="line">//Release</span><br><span class="line">libgslcblas.dll</span><br><span class="line">libgsl.dll</span><br></pre></td></tr></table></figure>
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2014/03/09/vs2008-gsl/" data-id="cipi0c8xs0004gkaqqqw3zvgc" class="article-share-link">Share</a>
       
-        
-        
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-20T05:47:01.000Z"><a href="/2014/02/20/fork/">Feb 20 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/20/fork/">fork</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+    <article id="post-git-intro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/17/git-intro/" class="article-date">
+  <time datetime="2014-02-17T07:59:59.000Z" itemprop="datePublished">2014-02-17</time>
+</a>
+    
   </div>
-</article>
-
-
-
-  <article class="using_git">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-02-17T07:59:59.000Z"><a href="/2014/02/17/使用Git进行代码管理/">Feb 17 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/02/17/使用Git进行代码管理/">使用Git进行代码管理</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/17/git-intro/">使用Git进行代码管理</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-        <h2>简介</h2>
-<p>git 分布式版本控制系统<br>GitLab GitHub克隆<br>Gitflow 一套开发流程+git扩展包<br>SourceTreeGitExtensions git的GUI客户端</p>
-<h2>git的优缺点</h2>
-<p> 本地版本库离线提交<br> 分支和合并<br> 分布式<br> 速度</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>git 分布式版本控制系统<br>GitLab GitHub克隆<br>Gitflow 一套开发流程+git扩展包<br>SourceTreeGitExtensions git的GUI客户端</p>
+<h2 id="git的优缺点"><a href="#git的优缺点" class="headerlink" title="git的优缺点"></a>git的优缺点</h2><p> 本地版本库离线提交<br> 分支和合并<br> 分布式<br> 速度</p>
 <p> 细粒度权限管理<br>    某个项目下某个目录开放给指定用户权限<br>         合理划分功能模块解决<br> 使用习惯</p>
-<h2>gitflow</h2>
-<p>基于git的分支合并功能，常用开发动作分配到不同分支进行。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-</pre></td><td class="code"><pre>  <span class="title">feature</span>	重量级开发分支
-  develop	普通开发分支
-  release	
-  hotfix	紧急修复
-  master	随时可用版本
-</pre></td></tr></table></figure>
-
-<p><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" target="_blank">http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png</a></p>
-<p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
-<h2>gitlab</h2>
-<p>web版git服务管理，方便的创建、管理项目，以及简单的项目管理。</p>
-<h2>SourceTreeGitExtensions</h2>
-<p>  各有特点，搭配使用。</p>
+<h2 id="gitflow"><a href="#gitflow" class="headerlink" title="gitflow"></a>gitflow</h2><p>基于git的分支合并功能，常用开发动作分配到不同分支进行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">feature	重量级开发分支</span><br><span class="line">develop	普通开发分支</span><br><span class="line">release	</span><br><span class="line">hotfix	紧急修复</span><br><span class="line">master	随时可用版本</span><br></pre></td></tr></table></figure>
+<p><a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png" target="_blank" rel="external">http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png</a></p>
+<p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+<h2 id="gitlab"><a href="#gitlab" class="headerlink" title="gitlab"></a>gitlab</h2><p>web版git服务管理，方便的创建、管理项目，以及简单的项目管理。</p>
+<h2 id="SourceTreeGitExtensions"><a href="#SourceTreeGitExtensions" class="headerlink" title="SourceTreeGitExtensions"></a>SourceTreeGitExtensions</h2><p>  各有特点，搭配使用。</p>
 <ul>
 <li><p>SourceTree<br> gitflow集成<br> 界面使用方便</p>
 </li>
@@ -272,178 +251,264 @@ libgsl<span class="variable">.dll</span>
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2014/02/17/git-intro/" data-id="cipi0c8xf0000gkaq25f2cg6y" class="article-share-link">Share</a>
       
-        
-        
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-  <article class="cdh4_rhel63">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-12-17T15:26:59.000Z"><a href="/2013/12/17/manager方式安装cdh4/">Dec 17 2013</a></time>
-      
-      
+    <article id="post-install-CDH4-Hype-V" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/17/install-CDH4-Hype-V/" class="article-date">
+  <time datetime="2013-12-17T15:26:59.000Z" itemprop="datePublished">2013-12-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="title"><a href="/2013/12/17/manager方式安装cdh4/">Manager方式在Hype-V中安装CDH4</a></h1>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/17/install-CDH4-Hype-V/">Cloudera Manager方式在Hype-V中安装CDH4</a>
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-        <h1>安装RHEL6.3</h1>
-<h1>hostname为FQDN形式    cdh0.localdomain</h1>
-<pre><code><span class="string">"""
-    hyper-v由于默认无法识别网卡驱动，需要等安装CI后手动设置，参见下一步说明
-"""</span>
-                                                                                            <span class="comment">#1</span></code></pre>
-<h1>安装Hyper-V CI</h1>
-<h1>设置eth0</h1>
-<pre><code>检查···/etc/sysconfig/network-scripts/ifcfg-eth0···，如不存在则创建
-静态配置
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>0<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-DHCP
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>1<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-检查hostname
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>2<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-NETWORKING=yes
-HOSTNAME=localhost.localdomain
-
-激活eth0
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>3<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-设置开机激活eth0
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>4<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-重启网络服务进行测试
-<span class="tag">&lt;<span class="title">notextile</span>&gt;</span>5<span class="tag">&lt;/<span class="title">notextile</span>&gt;</span>
-重启系统，使hostname生效(?)</code></pre>
-<h1>设置hosts</h1>
-<pre><code><span class="title">echo</span> <span class="string">"<span class="variable">$IP</span> <span class="variable">$hostname</span>"</span> &gt;&gt; /etc/hosts
-                                                                                            <span class="comment">#2</span></code></pre>
-<h1>关闭selinux</h1>
-<pre><code><span class="title">vim</span> /etc/selinux/conf
-设置为disabled</code></pre>
-<h1>关闭iptables</h1>
-<pre><code><span class="title">chkconfig</span> iptables <span class="built_in">off</span>
-service chkconfig stop</code></pre>
-<h1>设置RHEL6.3DVD镜像源</h1>
-<pre><code><span class="title">vim</span> /etc/yum.repos.d/rhel-<span class="number">63</span>-dvd.repo
-
-[<span class="type">RHEL</span>]
-<span class="title">name</span>=rhel6<span class="number">.3</span>
-<span class="title">baseurl</span>=http://<span class="number">192.168</span><span class="number">.16</span><span class="number">.100</span>/<span class="type">RHEL</span>/<span class="type">RHEL63</span>/
-<span class="title">gpgcheck</span>=<span class="number">1</span>
-<span class="title">gpgkey</span>=http://<span class="number">192.168</span><span class="number">.16</span><span class="number">.100</span>/<span class="type">RHEL</span>/<span class="type">RHEL63</span>/<span class="type">RPM</span>-<span class="type">GPG</span>-<span class="type">KEY</span>-redhat-release.gpg
-<span class="title">enabled</span>=<span class="number">1</span>
-                                                                                            #<span class="number">3</span></code></pre>
-<p><strong># 安装postgresql</strong></p>
-<h1>安装缺失包</h1>
-<pre><code><span class="title">yum</span> install fuse-libs
-
-<span class="title">easy_install</span> argparse</code></pre>
-<h1>参考</h1>
-<p>Installation Path A - Automated Installation by Cloudera Manager</p>
+        <h2 id="安装-RHEL6-3"><a href="#安装-RHEL6-3" class="headerlink" title="安装 RHEL6.3"></a>安装 RHEL6.3</h2><p>首先按照常规方式安装 RHEL6.3，注意需要设置 hostname 为 FQDN 格式(如 <code>cdh0.localdomain</code>)</p>
+<pre><code>由于Hyper-v默认无法识别网卡驱动，需要等安装CI后手动设置，参见下一步说明
+                                                                                            #1
+</code></pre><h2 id="安装Hyper-V-CI"><a href="#安装Hyper-V-CI" class="headerlink" title="安装Hyper-V CI"></a>安装Hyper-V CI</h2><ul>
+<li>设置eth0</li>
+</ul>
+<p>检查配置文件 <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> 是否存在，如不存在则创建静态配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line"></span><br><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=static</span><br><span class="line"># 广播地址（非必须）</span><br><span class="line">BROADCAST=255.255.255.255</span><br><span class="line">IPADDR=192.168.1.103</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line"># 网络地址(非必须)</span><br><span class="line">NETWORK=192.168.1.0</span><br><span class="line"># MAC地址</span><br><span class="line">HWADDR=00:0C:29:01:98:27</span><br><span class="line"># 网关地址</span><br><span class="line">GATEWAY=192.168.1.1</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5" target="_blank">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5</a></p>
+<li>设置 DHCP</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查hostname</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network</span><br></pre></td></tr></table></figure>
+<pre><code>NETWORKING=yes
+HOSTNAME=localhost.localdomain
+</code></pre><ul>
+<li>激活eth0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 up</span><br><span class="line">dhclient eth0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置开机激活eth0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"ifconfig eth0 up"</span> &gt;&gt; /etc/rc.local</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"dhclient eth0"</span> &gt;&gt; /etc/rc.local</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重启网络服务进行测试</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>重启系统，使hostname生效</p>
 </li>
-<li><p><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1" target="_blank">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1</a></p>
+<li><p>设置hosts</p>
 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$IP $hostname&quot; &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关闭selinux</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/selinux/conf</span><br></pre></td></tr></table></figure>
+<p>设置为selinux选项为disabled</p>
+<ul>
+<li>关闭iptables</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chkconfig iptables off</span><br><span class="line">service chkconfig stop</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置RHEL6.3DVD镜像源</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/rhel-63-dvd.repo</span><br></pre></td></tr></table></figure>
+<p>设置内容:</p>
+<pre><code>[RHEL]
+name=rhel6.3
+baseurl=http://192.168.16.100/RHEL/RHEL63/
+gpgcheck=1
+gpgkey=http://192.168.16.100/RHEL/RHEL63/RPM-GPG-KEY-redhat-release.gpg
+enabled=1
+                                                                                            #3
+</code></pre><ul>
+<li>安装postgresql</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装缺失依赖包</span><br><span class="line">yum install fuse-libs</span><br><span class="line">easy_install argparse</span><br><span class="line">yum install fuse-libs</span><br></pre></td></tr></table></figure>
+<h2 id="参考-Cloudera-文档安装-CDH4"><a href="#参考-Cloudera-文档安装-CDH4" class="headerlink" title="参考 Cloudera 文档安装 CDH4"></a>参考 Cloudera 文档安装 CDH4</h2><p>Installation Path A - Automated Installation by Cloudera Manager</p>
+<ul>
+<li><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5" target="_blank" rel="external">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_A.html#cmig_topic_6_5</a></li>
+<li><a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1" target="_blank" rel="external">http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_path_B.html?scroll=cmig_topic_6_6_2_unique_1</a></li>
 </ul>
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2013/12/17/install-CDH4-Hype-V/" data-id="cipi0c8xl0001gkaqv88pzlkq" class="article-share-link">Share</a>
       
-        
-        
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/12/hello-world/" class="article-date">
+  <time datetime="2013-12-12T08:18:08.000Z" itemprop="datePublished">2013-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12/12/hello-world/">Hello World</a>
+    </h1>
+  
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-        <div class="icon"></div>
-        <time datetime="2013-12-12T08:18:08.000Z"><a href="/2013/12/12/hello-world/">Dec 12 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/12/12/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://www.spark-note.com/2013/12/12/hello-world/" data-id="cipi0c8xw0006gkaqra2hkl0k" class="article-share-link">Share</a>
       
-        
-        
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
 </article>
 
 
-
-
-<nav id="pagination">
   
+
+</section>
+        
+          <aside id="sidebar">
   
-  <div class="clearfix"></div>
-</nav></div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
-    <input type="hidden" name="q" value="site:yoursite.com">
-  </form>
-</div>
+    
 
   
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/08/02/win32-libcurl-static/">Win32下静态连接使用libcurl</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06/05/replace-mt/">批量替换VS项目文件设置</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/09/vs2008-gsl/">VS2008下编译使用GSL库</a>
+          </li>
+        
+          <li>
+            <a href="/2014/02/17/git-intro/">使用Git进行代码管理</a>
+          </li>
+        
+          <li>
+            <a href="/2013/12/17/install-CDH4-Hype-V/">Cloudera Manager方式在Hype-V中安装CDH4</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
   
 </aside>
-    <div class="clearfix"></div>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 JJusti<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  &copy; 2014 JJusti
+    <a href="/" class="mobile-nav-link">Home</a>
   
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+<script src="/js/script.js"></script>
 
+  </div>
 </body>
 </html>
